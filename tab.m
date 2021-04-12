@@ -1,0 +1,9 @@
+function tab=tab(tx,ty,tz,mx,my,mz,theta)
+r=rab(mx,my,mz,theta);
+tab=eye(4);
+tab1=eye(4);
+tab2=eye(4);
+tab1(1:3,4)=[tx ty tz];
+tab2(1:3,4)=[-tx -ty -tz];
+tab(1:3,1:3)=r;
+tab=tab1*tab*tab2;
